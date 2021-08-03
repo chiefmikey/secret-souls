@@ -1,9 +1,6 @@
 module.exports = {
   extends: [
     'airbnb-base',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:jsx-a11y/recommended',
     'plugin:sonarjs/recommended',
     'plugin:compat/recommended',
     'plugin:md/recommended',

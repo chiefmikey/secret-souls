@@ -3,8 +3,12 @@
   "version": "0.0.1",
   "description": "Chief Mikey x Secret Souls",
   "main": "app.js",
+  "type": "module",
   "scripts": {
-    "test": "nodemon app.js"
+    "start": "node app.js",
+    "test": "nodemon app.js",
+    "build": "webpack --mode development",
+    "dev": "webpack --mode development -w"
   },
   "repository": {
     "type": "git",
@@ -15,7 +19,7 @@
     "secret-souls"
   ],
   "license": "ISC",
-    "author": "Mikl Wolfe <wolfe@mikl.io> (https://mikl.io)",
+  "author": "Mikl Wolfe <wolfe@mikl.io> (https://mikl.io)",
   "contributors": [
     "Mikl Wolfe <wolfe@mikl.io> (https://mikl.io)"
   ],
@@ -24,7 +28,6 @@
   },
   "homepage": "https://github.com/chiefmikey/secret-souls#readme",
   "devDependencies": {
-    "nodemon": "^2.0.12",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
@@ -33,6 +36,22 @@
     "eslint-plugin-json-format": "^2.0.1",
     "eslint-plugin-md": "^1.0.19",
     "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-sonar": "^0.6.1"
+    "eslint-plugin-sonar": "^0.6.1",
+    "nodemon": "^2.0.12",
+    "source-map-loader": "^3.0.0",
+    "ts-loader": "^9.2.4",
+    "typescript": "^4.3.5",
+    "webpack": "^5.48.0",
+    "webpack-cli": "^4.7.2"
+  },
+  "dependencies": {
+    "@koa/cors": "^3.1.0",
+    "@koa/router": "^10.1.0",
+    "dotenv": "^10.0.0",
+    "kaboom": "^0.5.1",
+    "koa": "^2.13.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-static": "^5.0.0",
+    "source-map-js": "^0.6.2"
   }
 }

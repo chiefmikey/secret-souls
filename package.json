@@ -1,0 +1,38 @@
+{
+  "name": "secret-souls",
+  "version": "0.0.1",
+  "description": "Chief Mikey x Secret Souls",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://chiefmikey@github.com/chiefmikey/secret-souls.git"
+  },
+  "keywords": [
+    "chief-mikey",
+    "secret-souls"
+  ],
+  "license": "ISC",
+    "author": "Mikl Wolfe <wolfe@mikl.io> (https://mikl.io)",
+  "contributors": [
+    "Mikl Wolfe <wolfe@mikl.io> (https://mikl.io)"
+  ],
+  "bugs": {
+    "url": "https://github.com/chiefmikey/secret-souls/issues"
+  },
+  "homepage": "https://github.com/chiefmikey/secret-souls#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.12",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-compat": "^3.11.1",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-json-format": "^2.0.1",
+    "eslint-plugin-md": "^1.0.19",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-sonar": "^0.6.1"
+  }
+}

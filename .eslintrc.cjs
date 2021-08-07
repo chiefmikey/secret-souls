@@ -4,6 +4,7 @@ module.exports = {
     'plugin:sonarjs/recommended',
     'plugin:compat/recommended',
     'plugin:md/recommended',
+    'plugin:css-modules/recommended',
     'plugin:prettier/recommended',
   ],
   overrides: [
@@ -18,6 +19,7 @@ module.exports = {
   env: {
     browser: true,
     node: true,
+    es6: true,
   },
   rules: {
     'no-unused-vars': 'warn',
@@ -27,7 +29,7 @@ module.exports = {
     'object-shorthand': 'off',
     'class-methods-use-this': 'off',
     'no-underscore-dangle': 'off',
-    'import/extensions': 0,
+    'import/extensions': 'off',
     'prettier/prettier': ['error'],
     'md/remark': [
       'error',
@@ -39,5 +41,6 @@ module.exports = {
       },
     ],
   },
-  plugins: ['import', 'prettier', 'json-format'],
+  plugins: ['import', 'prettier', 'json-format', 'css-modules'],
+  parserOptions: { ecmaVersion: 2020 },
 };

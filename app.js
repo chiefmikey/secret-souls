@@ -20,9 +20,9 @@ app
     }),
   )
   .use(bodyParser())
-  .use(serve(path.join(__dirname, '/client/public')))
-  // .use(submitRouter.routes())
-  // .use(submitRouter.allowedMethods());
+  .use(serve(path.join(__dirname, '/client/public')));
+// .use(submitRouter.routes())
+// .use(submitRouter.allowedMethods());
 
 app.listen(8080, () =>
   console.log(`Koa is listening to http://localhost:8080`),

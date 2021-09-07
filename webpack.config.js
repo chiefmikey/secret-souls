@@ -17,14 +17,21 @@ export default {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      },
-      {
         test: /\.js?/,
         exclude: /node_modules/,
         loader: 'babel-loader',
+        options: {
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                targets: {
+                  node: 'current',
+                },
+              },
+            ],
+          ],
+        },
       },
       {
         test: /\.css$/,

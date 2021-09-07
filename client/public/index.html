@@ -2,12 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>where i go to dream</title>
+    <title>Cloudyman</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" type="image/jpg" href="./assets/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="You can find the Cloudyman, but can you hear his cry?"
+    />
+    <meta name="keywords" content="Cloudyman, Cloudy Nights" />
+    <meta name="author" content="Cloudy Nights" />
+    <meta property="og:image" content="./assets/social.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="1024" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.itsacloudynight.com/" />
+    <meta property="og:title" content="Cloudyman" />
+    <meta
+      property="og:description"
+      content="You can find the Cloudyman, but can you hear his cry?"
+    />
   </head>
-  <body>
+  <body id="body">
+    <div id="fadeOut"></div>
     <div id="app">
-      <canvas id="game" />
+      <div id="gameWrapper">
+        <canvas id="game"></canvas>
+        <div id="blackScreen"><h1 id="title">touch me ;)</h1></div>
+        <img id="background" src="./assets/backgrounds/gameboii.png" />
+        <div id="controls">
+          <div id="up"></div>
+          <div id="right"></div>
+          <div id="down"></div>
+          <div id="left"></div>
+        </div>
+      </div>
+      <button id="zoom">[ zoom ]</button>
     </div>
     <script type="text/javascript" src="../dist/bundle.js"></script>
   </body>

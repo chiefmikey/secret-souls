@@ -1,11 +1,11 @@
-import k from '../init.js';
+import K from '../functions/init.js';
 
-const win = (args = {}) => {
-  k.play('moan');
-  k.add([
-    k.text('you win!'),
-    k.pos(k.width() / 2, k.height() / 2),
-    k.origin('center'),
+const win = () => {
+  K.play('priorities');
+  K.add([
+    K.text('you win!'),
+    K.pos(K.width() / 2, K.height() / 2),
+    K.origin('center'),
   ]);
 };
 

@@ -1,8 +1,8 @@
 FROM alpine:latest
-EXPOSE 3002
-WORKDIR /cloudyman
+EXPOSE 3005
+WORKDIR /secret-souls
 COPY . .
 COPY init.sh /bin
-RUN rm /cloudyman/init.sh
+RUN rm /secret-souls/init.sh
 RUN chmod +x /bin/init.sh
 ENTRYPOINT "init.sh"

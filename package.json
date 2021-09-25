@@ -12,7 +12,6 @@
   "dependencies": {
     "@koa/cors": "^3.1.0",
     "@koa/router": "^10.1.1",
-    "dotenv": "^10.0.0",
     "kaboom": "^0.5.1",
     "koa": "^2.13.3",
     "koa-bodyparser": "^4.3.0",
@@ -25,12 +24,8 @@
     "@babel/preset-env": "^7.15.6",
     "@mikey-pro/style-guide": "^1.5.1",
     "babel-loader": "^8.2.2",
-    "babel-preset-airbnb": "^5.0.0",
     "css-loader": "^6.3.0",
-    "file-loader": "^6.2.0",
     "nodemon": "^2.0.13",
-    "sass-loader": "^12.1.0",
-    "source-map-loader": "^3.0.0",
     "url-loader": "^4.1.1",
     "webpack": "^5.54.0",
     "webpack-cli": "^4.8.0"

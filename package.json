@@ -4,15 +4,15 @@
   "description": "chief mikey x secret souls",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "nodemon app.js",
     "build": "webpack --mode development",
-    "dev": "webpack --mode development -w"
+    "dev": "webpack --mode development -w",
+    "start": "node app.js",
+    "test": "nodemon app.js"
   },
   "dependencies": {
     "@koa/cors": "^3.1.0",
     "@koa/router": "^10.1.1",
-    "kaboom": "^0.5.1",
+    "kaboom": "^2000.0.0-beta.23",
     "koa": "^2.13.3",
     "koa-bodyparser": "^4.3.0",
     "koa-static": "^5.0.0",
@@ -22,12 +22,12 @@
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.6",
-    "@mikey-pro/style-guide": "^1.5.1",
+    "@mikey-pro/style-guide": "^1.5.2",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.3.0",
     "nodemon": "^2.0.13",
     "url-loader": "^4.1.1",
-    "webpack": "^5.54.0",
+    "webpack": "^5.57.0",
     "webpack-cli": "^4.8.0"
   },
   "license": "MIT",

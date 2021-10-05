@@ -72,7 +72,6 @@ const title = document.getElementById('title');
 
 const touchStart = () => {
   if (!sound && getComputedStyle(title).opacity === '1') {
-    console.log('ive been touched');
     K.play('coin');
     sound = true;
     document.getElementById('controls').style.pointerEvents = 'all';

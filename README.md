@@ -1,1 +1,1 @@
-# chief mikey x secret souls
+# Chief Mikey x Secret Souls

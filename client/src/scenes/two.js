@@ -5,21 +5,21 @@ import controls from '../functions/controls.js';
 
 const two = () => {
   const level = [
-    '=======F=======',
-    '=             =',
-    '=             =',
-    '=     !       =',
-    '=             =',
-    '=             =',
-    '=             =',
-    '=             =',
-    '=             =',
-    '=             =',
-    '=             =',
-    '=             =',
-    '=             =',
-    '=      @      =',
     '===============',
+    '=             =',
+    '=             =',
+    '=             =',
+    '=             =',
+    '=             =',
+    '=             =',
+    '=             =',
+    '=             =',
+    '=             =',
+    '=             =',
+    '=             =',
+    '=             =',
+    '=@       W    F',
+    '---------------',
   ];
 
   K.addLevel(level, {
@@ -27,7 +27,8 @@ const two = () => {
     height: 11,
     pos: K.vec2(20, 20),
     '=': [K.sprite('steel'), K.solid()],
-    '@': [K.sprite('guy'), 'playerOne'],
+    '-': [K.sprite('steel'), K.solid(), 'ground'],
+    '@': [K.sprite('guy'), K.body(), 'playerOne'],
     '!': [
       K.sprite(characters.cloudyman.sprite),
       K.solid(),
@@ -35,8 +36,10 @@ const two = () => {
       { msg: characters.cloudyman.msg },
     ],
     F: [K.sprite('door'), K.solid(), 'finalDoor'],
+    W: [K.sprite('wings'), 'wings'],
   });
-  controls();
+  K.gravity(1234);
+  controls(['jump']);
 };
 
 export default two;

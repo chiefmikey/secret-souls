@@ -20,6 +20,7 @@ K.loadSprite('cloudyman', 'assets/sprites/cloudyman.png');
 K.loadSprite('door', 'assets/sprites/door.png');
 K.loadSprite('guy', 'assets/sprites/guy.png');
 K.loadSprite('key', 'assets/sprites/key.png');
+K.loadSprite('wings', 'assets/sprites/key.png');
 K.loadSprite('steel', 'assets/sprites/steel.png');
 
 K.loadSound('coin', 'assets/sounds/coin.mp3');

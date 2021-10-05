@@ -1,5 +1,7 @@
 import K from './init.js';
-import { ifTalking } from '../content/talking.js';
+import { ifTalking } from '../actions/talking.js';
+import { onGround, isGrounded } from '../actions/grounded.js';
+import { canFly } from '../actions/flying.js';
 import playerOne from '../content/player.js';
 import './zoom.js';
 
@@ -9,7 +11,7 @@ let direction;
 let timer;
 let sound = false;
 
-const controls = () => {
+const controls = (input) => {
   const player = playerOne();
   const SPEED = 80;
 
@@ -20,7 +22,20 @@ const controls = () => {
     down: K.vec2(0, 1),
   };
 
+  if (input && input.includes('jump')) {
+    dirs.space = K.vec2(0, -1);
+    delete dirs.up;
+    delete dirs.down;
+    K.keyPress('space', () => {
+      if ((isGrounded() && !canFly()) || canFly()) {
+        player.jump(222);
+        onGround(false);
+      }
+    });
+  }
+
   const dirKeys = Object.keys(dirs);
+
   for (let i = 0; i < dirKeys.length; i += 1) {
     K.keyPress(dirKeys[i], ifTalking);
     K.keyDown(dirKeys[i], () => {

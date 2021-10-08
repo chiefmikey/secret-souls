@@ -22,7 +22,7 @@
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.6",
-    "@mikey-pro/style-guide": "^1.5.2",
+    "@mikey-pro/style-guide": "^1.5.4",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.3.0",
     "nodemon": "^2.0.13",

@@ -2,6 +2,7 @@ import K from '../functions/init.js';
 import { onGround } from '../actions/grounded.js';
 import { hasWings } from '../actions/flying.js';
 import { talk, cloudyTalk } from '../actions/talking.js';
+import { goBack, isGoingBack } from '../actions/backwards.js';
 
 const playerOne = () => {
   const player = K.get('playerOne')[0];
@@ -37,30 +38,27 @@ const playerOne = () => {
     hasWings(true);
   });
 
-  player.collides('sign1', () => {
+  player.collides('sign1-1', () => {
     talk('Where I Go To Dream');
     sign1 = true;
   });
 
   player.collides('ground', () => onGround(true));
 
-  player.overlaps('doorOne1-1', () => {
-    if (sign1) {
+  player.collides('touch1-1', () => {
+    if (isGoingBack() || (!isGoingBack() && sign1)) {
+      goBack(false);
       K.play('hit');
-      K.go('2-1');
+      K.go('2');
     } else {
       talk('???');
     }
   });
 
-  player.overlaps('doorOne1-2', () => {
+  player.overlaps('door2-1', () => {
+    goBack(true);
     K.play('hit');
-    K.go('2-1');
-  });
-
-  player.overlaps('doorOne2-1', () => {
-    K.play('hit');
-    K.go('1-2');
+    K.go('1');
   });
 
   let finalDoor = false;

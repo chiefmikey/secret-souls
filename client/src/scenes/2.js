@@ -1,10 +1,13 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 import K from '../functions/init.js';
 import characters from '../content/characters.js';
-import controls from '../functions/controls.js';
+import { controls } from '../functions/controls.js';
 import { canFly } from '../actions/flying.js';
+import fade from '../functions/fade.js';
 
 const twoOne = () => {
+  fade();
+
   const level = [
     '===============',
     '=             =',
@@ -16,10 +19,10 @@ const twoOne = () => {
     '=             =',
     '=             =',
     '=             =',
-    '=             =',
-    '=             =',
-    '=             =',
     '|@       W    F',
+    '===============',
+    '===============',
+    '===============',
     '---------------',
   ];
 
@@ -35,7 +38,7 @@ const twoOne = () => {
     '=': [K.sprite('steel'), K.solid()],
     '-': [K.sprite('steel'), K.solid(), 'ground'],
     '@': [K.sprite('guy'), K.body(), 'playerOne'],
-    '|': [K.sprite('door'), 'doorOne2-1'],
+    '|': [K.sprite('door'), 'door2-1'],
     '!': [
       K.sprite(characters.cloudyman.sprite),
       K.solid(),
@@ -47,7 +50,7 @@ const twoOne = () => {
   });
 
   K.gravity(1234);
-  controls(['jump']);
+  setTimeout(() => controls(['jump']), 400);
 };
 
 export default twoOne;

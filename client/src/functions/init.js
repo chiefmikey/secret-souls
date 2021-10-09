@@ -7,7 +7,7 @@ const K = kaboom({
   fullscreen: false,
   width: 205,
   height: 205,
-  scale: 1,
+  scale: 2,
   debug: false,
   global: false,
   plugins: [],

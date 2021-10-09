@@ -7,6 +7,7 @@ const playerOne = () => {
   const player = K.get('playerOne')[0];
 
   let hasKey = false;
+  let sign1 = false;
 
   player.collides('ch1', (ch) => {
     K.play('aaa');
@@ -36,20 +37,35 @@ const playerOne = () => {
     hasWings(true);
   });
 
+  player.collides('sign1', () => {
+    talk('Where I Go To Dream');
+    sign1 = true;
+  });
+
   player.collides('ground', () => onGround(true));
 
-  player.overlaps('door1', () => {
-    if (hasKey) {
+  player.overlaps('doorOne1-1', () => {
+    if (sign1) {
       K.play('hit');
-      K.go('two');
+      K.go('2-1');
     } else {
-      talk('wherez dey key?');
+      talk('???');
     }
+  });
+
+  player.overlaps('doorOne1-2', () => {
+    K.play('hit');
+    K.go('2-1');
+  });
+
+  player.overlaps('doorOne2-1', () => {
+    K.play('hit');
+    K.go('1-2');
   });
 
   let finalDoor = false;
 
-  player.overlaps('finalDoor', () => {
+  player.collides('finalDoor', () => {
     if (finalDoor) {
       K.go('win');
     } else {

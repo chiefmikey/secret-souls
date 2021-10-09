@@ -21,6 +21,13 @@ h1,
   user-select: none;
 }
 
+canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 body {
   position: relative;
   margin: 0;

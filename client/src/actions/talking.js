@@ -16,7 +16,7 @@ export const talk = (msg) => {
   talking.push(
     K.add([
       K.text(msg, 7, { width: 140 }),
-      K.pos(K.width() / 2, K.height() - 11),
+      K.pos(K.width() / 2, K.height() - 24),
       K.origin('center'),
     ]),
   );

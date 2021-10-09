@@ -3,23 +3,23 @@ import K from '../functions/init.js';
 import characters from '../content/characters.js';
 import controls from '../functions/controls.js';
 
-const two = () => {
+const oneTwo = () => {
   const level = [
+    '=======|=======',
+    '=      @      =',
+    '=             =',
+    '=             =',
+    '=             =',
+    '=             =',
+    '=      $      =',
+    '=             =',
+    '=             =',
+    '=             =',
+    '=             =',
+    '=             =',
+    '=             =',
+    '=             =',
     '===============',
-    '=             =',
-    '=             =',
-    '=             =',
-    '=             =',
-    '=             =',
-    '=             =',
-    '=             =',
-    '=             =',
-    '=             =',
-    '=             =',
-    '=             =',
-    '=             =',
-    '=@       W    F',
-    '---------------',
   ];
 
   K.addLevel(level, {
@@ -27,19 +27,25 @@ const two = () => {
     height: 11,
     pos: K.vec2(20, 20),
     '=': [K.sprite('steel'), K.solid()],
-    '-': [K.sprite('steel'), K.solid(), 'ground'],
-    '@': [K.sprite('guy'), K.body(), 'playerOne'],
-    '!': [
-      K.sprite(characters.cloudyman.sprite),
-      K.solid(),
-      characters.cloudyman.sprite,
-      { msg: characters.cloudyman.msg },
-    ],
-    F: [K.sprite('door'), K.solid(), 'finalDoor'],
-    W: [K.sprite('wings'), 'wings'],
+    $: [K.sprite('key'), K.solid(), 'sign1'],
+    '@': [K.sprite('guy'), 'playerOne'],
+    '|': [K.sprite('door'), K.solid(), 'doorOne1-2'],
+    any(ch) {
+      const char = characters[ch];
+      if (char) {
+        return [
+          K.sprite(char.sprite),
+          K.solid(),
+          char.sprite,
+          {
+            msg: char.msg,
+          },
+        ];
+      }
+      return undefined;
+    },
   });
-  K.gravity(1234);
-  controls(['jump']);
+  controls();
 };
 
-export default two;
+export default oneTwo;

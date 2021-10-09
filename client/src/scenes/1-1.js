@@ -2,7 +2,7 @@
 import K from '../functions/init.js';
 import characters from '../content/characters.js';
 
-const one = () => {
+const oneOne = () => {
   const level = [
     '=======|=======',
     '=             =',
@@ -26,9 +26,9 @@ const one = () => {
     height: 11,
     pos: K.vec2(20, 20),
     '=': [K.sprite('steel'), K.solid()],
-    $: [K.sprite('key'), 'key'],
+    $: [K.sprite('key'), K.solid(), 'sign1'],
     '@': [K.sprite('guy'), 'playerOne'],
-    '|': [K.sprite('door'), K.solid(), 'door1'],
+    '|': [K.sprite('door'), K.solid(), 'doorOne1-1'],
     any(ch) {
       const char = characters[ch];
       if (char) {
@@ -46,4 +46,4 @@ const one = () => {
   });
 };
 
-export default one;
+export default oneOne;

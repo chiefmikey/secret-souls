@@ -83,10 +83,11 @@ button {
 
 #blackScreen,
 #game {
-  width: auto;
-  height: 49%;
+  width: 96%;
+  height: 51%;
   position: absolute;
-  top: 2%;
+  top: 1%;
+  left: 2%;
   border-radius: 5%;
   background-color: black;
 }

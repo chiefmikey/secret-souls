@@ -7,13 +7,6 @@ import './zoom.js';
 
 let dirs = {};
 
-const dirsBackup = {
-  left: K.vec2(-1, 0),
-  up: K.vec2(0, -1),
-  right: K.vec2(1, 0),
-  down: K.vec2(0, 1),
-};
-
 let direction;
 
 let getMoving = () => {};
@@ -26,7 +19,12 @@ const SPEED = 80;
 export const controls = (input) => {
   const player = playerOne();
 
-  dirs = dirsBackup;
+  dirs = {
+    left: K.vec2(-1, 0),
+    up: K.vec2(0, -1),
+    right: K.vec2(1, 0),
+    down: K.vec2(0, 1),
+  };
 
   load = () => {
     timer = setInterval(() => player.move(dirs[direction].scale(SPEED)), 15);
@@ -94,7 +92,12 @@ const playerMove = (e) => {
 };
 
 export const loadIn = (dir) => {
-  dirs = dirsBackup;
+  dirs = {
+    left: K.vec2(-1, 0),
+    up: K.vec2(0, -1),
+    right: K.vec2(1, 0),
+    down: K.vec2(0, 1),
+  };
   direction = dir;
   // dirs[dir] = dirsBackup[dir];
   load();

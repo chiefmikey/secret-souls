@@ -11,23 +11,23 @@ export const ifTalking = () => {
   }
 };
 
-export const talk = (msg) => {
+export const talk1 = (msg) => {
   ifTalking();
   talking.push(
     K.add([
       K.text(msg, 7, { width: 140 }),
-      K.pos(K.width() / 2, K.height() - 22),
+      K.pos(K.width() / 2, K.height() / 2),
       K.origin('center'),
     ]),
   );
 };
 
-export const cloudyTalk = (msg) => {
+export const talk2 = (msg) => {
   ifTalking();
   talking.push(
     K.add([
-      K.text(msg),
-      K.pos(K.width() / 2, K.height() - 22),
+      K.text(msg, 7, { width: 140 }),
+      K.pos(K.width() / 2, K.height() / 2 - 20),
       K.origin('center'),
     ]),
   );

@@ -16,7 +16,7 @@ export const talk = (msg) => {
   talking.push(
     K.add([
       K.text(msg, 7, { width: 140 }),
-      K.pos(K.width() / 2, K.height() - 24),
+      K.pos(K.width() / 2, K.height() - 22),
       K.origin('center'),
     ]),
   );
@@ -25,6 +25,10 @@ export const talk = (msg) => {
 export const cloudyTalk = (msg) => {
   ifTalking();
   talking.push(
-    K.add([K.text(msg), K.pos(K.width() / 2, 11), K.origin('center')]),
+    K.add([
+      K.text(msg),
+      K.pos(K.width() / 2, K.height() - 22),
+      K.origin('center'),
+    ]),
   );
 };

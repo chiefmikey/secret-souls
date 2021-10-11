@@ -7,21 +7,21 @@ import { isGoingBack } from '../actions/backwards.js';
 
 const oneOne = () => {
   const level = [
-    '======|||==    ====',
-    '====           ====',
-    '==     ™         ==',
-    '=   $             =',
-    '=                 =',
-    '=                 =',
-    '=                 =',
-    '=                 =',
-    '=                 =',
-    '=                 =',
-    '=                 =',
-    '=      @          =',
-    '=                 =',
-    '=                 =',
-    '===========    ====',
+    '=======|||=======',
+    '====         ====',
+    '==      ™      ==',
+    '=   $           =',
+    '=               =',
+    '=               =',
+    '=               =',
+    '=               =',
+    '=               =',
+    '=               =',
+    '=               =',
+    '=       @       =',
+    '=               =',
+    '=               =',
+    '=================',
   ];
 
   let playerOne = [K.sprite('guy'), 'playerOne'];
@@ -36,7 +36,7 @@ const oneOne = () => {
   K.addLevel(level, {
     width: 11,
     height: 11,
-    pos: K.vec2(20, 20),
+    pos: K.vec2(12, 12),
     '=': [K.sprite('steel'), K.solid()],
     $: [K.sprite('key'), K.solid(), 'sign1-1'],
     '@': playerOne,

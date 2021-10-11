@@ -1,35 +1,35 @@
 import K from '../functions/init.js';
 import { onGround } from '../actions/grounded.js';
 import { hasWings } from '../actions/flying.js';
-import { talk, cloudyTalk } from '../actions/talking.js';
+import { talk1, talk2 } from '../actions/talking.js';
 import { goBack, isGoingBack } from '../actions/backwards.js';
 
 const playerOne = () => {
   const player = K.get('playerOne')[0];
 
-  let hasKey = false;
+  // let hasKey = false;
   let sign1 = false;
 
   player.collides('ch1', (ch) => {
     K.play('aaa');
-    talk(ch.msg);
+    talk1(ch.msg);
   });
 
   player.collides('ch2', (ch) => {
     K.play('haha');
-    talk(ch.msg);
+    talk1(ch.msg);
   });
 
   player.collides('cloudyman', (ch) => {
     K.play('ayy');
-    cloudyTalk(ch.msg);
+    talk2(ch.msg);
     finalDoor = true;
   });
 
   player.collides('key', (key) => {
     K.play('coin');
     K.destroy(key);
-    hasKey = true;
+    // hasKey = true;
   });
 
   player.collides('wings', (wings) => {
@@ -39,7 +39,7 @@ const playerOne = () => {
   });
 
   player.collides('sign1-1', () => {
-    talk('Where I Go To Dream');
+    talk1('Where I Go To Dream');
     sign1 = true;
   });
 
@@ -51,7 +51,7 @@ const playerOne = () => {
       K.play('hit');
       K.go('2');
     } else {
-      talk('???');
+      talk1('???');
     }
   });
 
@@ -67,7 +67,7 @@ const playerOne = () => {
     if (finalDoor) {
       K.go('win');
     } else {
-      talk('did you talk to the Cloudyman?');
+      talk2('did you talk to the Cloudyman?');
     }
   });
 

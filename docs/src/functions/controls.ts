@@ -1,10 +1,10 @@
-import { canFly } from '../actions/flying.js';
-import { onGround, isGrounded } from '../actions/grounded.js';
-import { ifTalking } from '../actions/talking.js';
-import playerOne from '../content/player.js';
+import { canFly } from '../actions/flying';
+import { onGround, isGrounded } from '../actions/grounded';
+import { ifTalking } from '../actions/talking';
+import playerOne from '../content/player';
 
-import K from './init.js';
-import './zoom.js';
+import K from './init';
+import './zoom';
 
 let directories = {};
 

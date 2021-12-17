@@ -1,9 +1,9 @@
 /* eslint-disable sonarjs/no-duplicate-string */
-import { canFly } from '../actions/flying.js';
-import characters from '../content/characters.js';
-import { controls } from '../functions/controls.js';
-import fade from '../functions/fade.js';
-import K from '../functions/init.js';
+import { canFly } from '../actions/flying';
+import characters from '../content/characters';
+import { controls } from '../functions/controls';
+import fade from '../functions/fade';
+import K from '../functions/init';
 
 const twoOne = () => {
   fade();

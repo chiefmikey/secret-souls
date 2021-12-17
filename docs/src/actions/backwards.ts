@@ -1,6 +1,6 @@
 let back = false;
 
-export const goBack = (bool) => {
+export const goBack = (bool: boolean) => {
   back = bool;
 };
 

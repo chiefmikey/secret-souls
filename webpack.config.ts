@@ -37,7 +37,7 @@ const config: Configuration = {
       },
       {
         test: /\.css$/,
-        loader: 'css-loader',
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(png|ttf|jp(e*)g|svg)$/,
@@ -51,7 +51,10 @@ const config: Configuration = {
     ],
   },
   resolve: {
-    extensions: ['.js', '.mjs', '.cjs', '.tsx', '.ts'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.mjs', '.cjs'],
+  },
+  experiments: {
+    topLevelAwait: true,
   },
   devtool: 'inline-source-map',
 };

@@ -1,6 +1,6 @@
 let grounded = true;
 
-export const onGround = (bool) => {
+export const onGround = (bool: boolean) => {
   grounded = bool;
 };
 

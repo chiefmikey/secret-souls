@@ -1,6 +1,6 @@
 let wings = false;
 
-export const hasWings = (bool) => {
+export const hasWings = (bool: boolean) => {
   wings = bool;
 };
 

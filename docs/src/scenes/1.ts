@@ -1,9 +1,11 @@
 /* eslint-disable sonarjs/no-duplicate-string */
-import { isGoingBack } from '../actions/backwards.js';
-import characters from '../content/characters.js';
-import { controls, loadIn } from '../functions/controls.js';
-import fade from '../functions/fade.js';
-import K from '../functions/init.js';
+import { SpriteComp } from 'kaboom';
+
+import { isGoingBack } from '../actions/backwards';
+import characters from '../content/characters';
+import { controls, loadIn } from '../functions/controls';
+import fade from '../functions/fade';
+import K from '../functions/init';
 
 const oneOne = () => {
   const level = [
@@ -26,7 +28,7 @@ const oneOne = () => {
   ];
 
   let playerOne = [K.sprite('guy'), 'playerOne'];
-  let returnPlayerOne = [];
+  let returnPlayerOne: (string | SpriteComp)[] = [];
   if (isGoingBack()) {
     playerOne = [];
     returnPlayerOne = [K.sprite('guy'), 'playerOne'];

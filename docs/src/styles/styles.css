@@ -26,42 +26,42 @@ canvas {
 
 body {
   position: relative;
-  margin: 0;
+  display: flex;
   width: 100vw;
   height: 100vh;
+  margin: 0;
   overflow: hidden;
-  background-color: black;
-  display: flex;
   flex-direction: column;
+  background-color: black;
   justify-content: center;
   align-items: center;
 }
 
 button {
-  background: none;
   padding: 0;
-  border: none;
   font-weight: 900;
+  background: none;
+  border: none;
 }
 
 #fadeOut {
   position: absolute;
   top: 0;
-  opacity: 100%;
+  z-index: 2;
   width: 100%;
   height: 100%;
-  background-color: black;
-  animation: fadeOut 1s linear 0s forwards;
   pointer-events: none;
-  touch-action: none;
   user-select: none;
-  z-index: 2;
+  background-color: black;
+  opacity: 1;
+  animation: fadeOut 1s linear 0s forwards;
+  touch-action: none;
 }
 
 #app {
+  display: flex;
   width: 100%;
   height: 100%;
-  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
@@ -69,9 +69,9 @@ button {
 
 #gameWrapper {
   position: relative;
+  display: flex;
   max-width: 100%;
   max-height: 100%;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -79,46 +79,46 @@ button {
 
 #blackScreen,
 #game {
-  width: 96%;
-  height: 51%;
   position: absolute;
   top: 1.2%;
   left: 2%;
-  border-radius: 5%;
+  width: 96%;
+  height: 51%;
   background-color: black;
+  border-radius: 5%;
 }
 
 #blackScreen {
-  min-width: 68%;
   display: flex;
+  min-width: 68%;
   flex-direction: column;
+  user-select: none;
   justify-content: center;
   align-items: center;
   touch-action: none;
-  user-select: none;
 }
 
 #title {
   position: absolute;
+  top: 44%;
+  z-index: 3;
+  margin: 0;
   font-size: 100%;
   color: white;
-  margin: 0;
-  opacity: 0%;
-  top: 44%;
+  user-select: none;
+  opacity: 0;
   transform: scale(1);
   animation: fadeIn 0.3s linear 1.5s forwards;
-  z-index: 3;
   touch-action: none;
-  user-select: none;
 }
 
 #background {
+  z-index: 1;
   max-width: 100%;
   max-height: 100%;
   pointer-events: none;
-  touch-action: none;
   user-select: none;
-  z-index: 1;
+  touch-action: none;
 }
 
 #controls {
@@ -130,9 +130,9 @@ button {
 #down,
 #left {
   position: absolute;
+  z-index: 5;
   width: 15%;
   height: 10%;
-  z-index: 5;
 }
 
 #right,
@@ -162,18 +162,18 @@ button {
 
 #zoom {
   position: fixed;
-  bottom: -10px;
   right: -10px;
+  bottom: -10px;
+  z-index: 6;
   width: 100px;
   height: 50px;
-  font-size: 15px;
-  white-space: nowrap;
-  color: black;
-  background-color: rgb(255 255 255 / 50%);
-  border-radius: 10px;
   padding: 10px 20px 20px 10px;
+  font-size: 15px;
+  color: black;
+  white-space: nowrap;
   visibility: hidden;
-  z-index: 6;
+  background-color: rgb(255 255 255 / 0.5);
+  border-radius: 10px;
 }
 
 @media (min-width: 400px), (min-height: 960px) {
@@ -188,20 +188,20 @@ button {
 
 @keyframes fadeIn {
   from {
-    opacity: 0%;
+    opacity: 0;
   }
 
   to {
-    opacity: 100%;
+    opacity: 1;
   }
 }
 
 @keyframes fadeOut {
   from {
-    opacity: 100%;
+    opacity: 1;
   }
 
   to {
-    opacity: 0%;
+    opacity: 0;
   }
 }

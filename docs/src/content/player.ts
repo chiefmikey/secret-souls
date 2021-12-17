@@ -1,8 +1,8 @@
-import { goBack, isGoingBack } from '../actions/backwards.js';
-import { hasWings } from '../actions/flying.js';
-import { onGround } from '../actions/grounded.js';
-import { talk1, talk2 } from '../actions/talking.js';
-import K from '../functions/init.js';
+import { goBack, isGoingBack } from '../actions/backwards';
+import { hasWings } from '../actions/flying';
+import { onGround } from '../actions/grounded';
+import { talk1, talk2 } from '../actions/talking';
+import K from '../functions/init';
 
 const playerOne = () => {
   const player = K.get('playerOne')[0];

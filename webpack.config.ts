@@ -14,21 +14,26 @@ const config: Configuration = {
   module: {
     rules: [
       {
-        test: /\.js?/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        options: {
-          presets: [
-            [
-              '@babel/preset-env',
-              {
-                targets: {
-                  node: 'current',
-                },
-              },
-            ],
-          ],
-        },
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                [
+                  '@babel/preset-env',
+                  {
+                    targets: {
+                      node: 'current',
+                    },
+                  },
+                ],
+                '@babel/preset-typescript',
+              ],
+            },
+          },
+        ],
       },
       {
         test: /\.css$/,

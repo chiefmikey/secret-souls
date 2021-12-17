@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-expressions */
-const blackScreen = document.getElementById('blackScreen');
+const blackScreen = document.querySelector('#blackScreen');
 
 const fade = () => {
   blackScreen.style.animation = 'none';

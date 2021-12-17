@@ -1,11 +1,12 @@
-import K from './init.js';
-import { ifTalking } from '../actions/talking.js';
-import { onGround, isGrounded } from '../actions/grounded.js';
 import { canFly } from '../actions/flying.js';
+import { onGround, isGrounded } from '../actions/grounded.js';
+import { ifTalking } from '../actions/talking.js';
 import playerOne from '../content/player.js';
+
+import K from './init.js';
 import './zoom.js';
 
-let dirs = {};
+let directories = {};
 
 let direction;
 
@@ -16,10 +17,10 @@ let timer;
 let sound = false;
 const SPEED = 80;
 
-export const controls = (input) => {
+export const controls = (input?: string[]) => {
   const player = playerOne();
 
-  dirs = {
+  directories = {
     left: K.vec2(-1, 0),
     up: K.vec2(0, -1),
     right: K.vec2(1, 0),
@@ -27,14 +28,17 @@ export const controls = (input) => {
   };
 
   load = () => {
-    timer = setInterval(() => player.move(dirs[direction].scale(SPEED)), 15);
+    timer = setInterval(
+      () => player.move(directories[direction].scale(SPEED)),
+      15,
+    );
     setTimeout(() => clearInterval(timer), 1000);
   };
 
   if (input && input.includes('jump')) {
-    dirs.space = K.vec2(0, -1);
-    delete dirs.up;
-    delete dirs.down;
+    directories.space = K.vec2(0, -1);
+    delete directories.up;
+    delete directories.down;
     K.keyPress('space', () => {
       if ((isGrounded() && !canFly()) || canFly()) {
         player.jump(222);
@@ -43,12 +47,12 @@ export const controls = (input) => {
     });
   }
 
-  const dirKeys = Object.keys(dirs);
+  const dirKeys = Object.keys(directories);
 
-  for (let i = 0; i < dirKeys.length; i += 1) {
-    K.keyPress(dirKeys[i], ifTalking);
-    K.keyDown(dirKeys[i], () => {
-      player.move(dirs[dirKeys[i]].scale(SPEED));
+  for (const dirKey of dirKeys) {
+    K.keyPress(dirKey, ifTalking);
+    K.keyDown(dirKey, () => {
+      player.move(directories[dirKey].scale(SPEED));
     });
   }
 
@@ -56,7 +60,7 @@ export const controls = (input) => {
     ifTalking();
     timer = setInterval(() => {
       if (isDown) {
-        player.move(dirs[direction].scale(SPEED));
+        player.move(directories[direction].scale(SPEED));
       }
     }, 15);
   };
@@ -92,7 +96,7 @@ const playerMove = (e) => {
 };
 
 export const loadIn = (dir) => {
-  dirs = {
+  directories = {
     left: K.vec2(-1, 0),
     up: K.vec2(0, -1),
     right: K.vec2(1, 0),
@@ -103,15 +107,15 @@ export const loadIn = (dir) => {
   load();
 };
 
-const blackScreen = document.getElementById('blackScreen');
-const title = document.getElementById('title');
+const blackScreen = document.querySelector('#blackScreen');
+const title = document.querySelector('#title');
 
 const touchStart = () => {
   if (!sound && getComputedStyle(title).opacity === '1') {
     console.log('ive been touched');
     K.play('coin');
     sound = true;
-    document.getElementById('controls').style.pointerEvents = 'all';
+    document.querySelector('#controls').style.pointerEvents = 'all';
     blackScreen.style.animation = 'fadeOut .4s linear 0s forwards';
     title.style.animation = 'fadeOut .2s linear 0s forwards';
   }
@@ -121,8 +125,8 @@ blackScreen.addEventListener('mousedown', touchStart);
 blackScreen.addEventListener('touchstart', touchStart);
 title.addEventListener('mousedown', touchStart);
 title.addEventListener('touchstart', touchStart);
-document.addEventListener('keyup', (ev) => {
-  if (ev.code === 'Space' || ev.code === 'Enter') {
+document.addEventListener('keyup', (event_) => {
+  if (event_.code === 'Space' || event_.code === 'Enter') {
     touchStart();
   }
 });

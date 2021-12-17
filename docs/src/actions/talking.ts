@@ -4,29 +4,29 @@ let talking = [];
 
 export const ifTalking = () => {
   if (talking[0]) {
-    talking.forEach((t) => {
+    for (const t of talking) {
       K.destroy(t);
-    });
+    }
     talking = [];
   }
 };
 
-export const talk1 = (msg) => {
+export const talk1 = (message) => {
   ifTalking();
   talking.push(
     K.add([
-      K.text(msg, 7, { width: 140 }),
+      K.text(message, 7, { width: 140 }),
       K.pos(K.width() / 2, K.height() / 2),
       K.origin('center'),
     ]),
   );
 };
 
-export const talk2 = (msg) => {
+export const talk2 = (message) => {
   ifTalking();
   talking.push(
     K.add([
-      K.text(msg, 7, { width: 140 }),
+      K.text(message, 7, { width: 140 }),
       K.pos(K.width() / 2, K.height() / 2 - 20),
       K.origin('center'),
     ]),

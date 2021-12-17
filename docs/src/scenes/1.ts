@@ -1,9 +1,9 @@
 /* eslint-disable sonarjs/no-duplicate-string */
-import K from '../functions/init.js';
+import { isGoingBack } from '../actions/backwards.js';
 import characters from '../content/characters.js';
 import { controls, loadIn } from '../functions/controls.js';
 import fade from '../functions/fade.js';
-import { isGoingBack } from '../actions/backwards.js';
+import K from '../functions/init.js';
 
 const oneOne = () => {
   const level = [
@@ -56,7 +56,6 @@ const oneOne = () => {
           },
         ];
       }
-      return undefined;
     },
   });
 

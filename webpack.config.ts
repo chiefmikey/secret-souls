@@ -1,11 +1,12 @@
-import path from 'path';
+import path from 'node:path';
+import { Configuration } from 'webpack';
 
 const SRC_DIR = path.join(path.resolve(), '/client/src');
 const DIST_DIR = path.join(path.resolve(), '/client/public/dist');
 
-export default {
+const config: Configuration = {
   mode: 'development',
-  entry: `${SRC_DIR}/index.js`,
+  entry: `${SRC_DIR}/index.ts`,
   output: {
     filename: 'bundle.js',
     path: DIST_DIR,
@@ -49,3 +50,5 @@ export default {
   },
   devtool: 'inline-source-map',
 };
+
+export default config;

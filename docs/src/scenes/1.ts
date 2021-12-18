@@ -46,8 +46,8 @@ const oneOne = () => {
     '™': returnPlayerOne,
     '/': [K.sprite('door'), 'door1-1'],
     '|': [K.sprite('door'), K.solid(), 'touch1-1'],
-    any(ch) {
-      const char = characters[ch];
+    any(ch: string) {
+      const char = characters[ch as keyof typeof characters];
       if (char) {
         return [
           K.sprite(char.sprite),

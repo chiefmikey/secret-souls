@@ -4,7 +4,7 @@ import path from 'node:path';
 
 const app = new Koa();
 app
-  .use(serve(path.join(path.resolve(), '/client/public')))
+  .use(serve(path.join(path.resolve(), '/docs')))
   .listen(3005, () => console.log('Koa is listening to http://localhost:3005'));
 
 export default app;

@@ -13,7 +13,7 @@ const K = kaboom({
   plugins: [],
 });
 
-// K.loadRoot('/client/public/');
+K.loadRoot('/public/');
 K.loadSprite('ch1', 'assets/sprites/ch1.png');
 K.loadSprite('ch2', 'assets/sprites/ch2.png');
 K.loadSprite('cloudyman', 'assets/sprites/cloudyman.png');

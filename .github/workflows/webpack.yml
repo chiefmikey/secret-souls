@@ -44,6 +44,6 @@ jobs:
           pull: 'NO-PULL'
           push: origin HEAD:client -f
           remove:
-            '-r webpack.config.ts tsconfig.json README.md package.json package-lock.json init.sh healthcheck.js Dockerfile app.ts .gitignore .dockerignore node_modules client/src'
+            '-r webpack.config.ts tsconfig.json README.md package.json package-lock.json init.sh client healthcheck.js Dockerfile .gitignore .dockerignore node_modules client/src'
           signoff: false
           # tag: 'v1.0.0 --force'

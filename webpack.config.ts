@@ -1,7 +1,7 @@
 import path from 'node:path';
 import { Configuration } from 'webpack';
 
-const SRC_DIR = path.join(path.resolve(), '/docs/src');
+const SRC_DIR = path.join(path.resolve(), '/client/src');
 const DIST_DIR = path.join(path.resolve(), '/docs/public/dist');
 
 const config: Configuration = {

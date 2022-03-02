@@ -11,4 +11,4 @@ K.scene('1', () => one());
 K.scene('2', () => two());
 K.scene('win', win);
 
-K.start('1');
+K.go('1');

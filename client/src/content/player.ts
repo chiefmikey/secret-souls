@@ -1,3 +1,4 @@
+import { GameObj } from 'kaboom';
 import { goBack, isGoingBack } from '../actions/backwards';
 import { hasWings } from '../actions/flying';
 import { onGround } from '../actions/grounded';
@@ -10,29 +11,29 @@ const playerOne = () => {
   // let hasKey = false;
   let sign1 = false;
 
-  player.collides('ch1', (ch) => {
+  player.collides('ch1', (ch: {[key: string]: string}) => {
     K.play('aaa');
     talk1(ch.msg);
   });
 
-  player.collides('ch2', (ch) => {
+  player.collides('ch2', (ch: {[key: string]: string}) => {
     K.play('haha');
     talk1(ch.msg);
   });
 
-  player.collides('cloudyman', (ch) => {
+  player.collides('cloudyman', (ch: {[key: string]: string}) => {
     K.play('ayy');
     talk2(ch.msg);
     finalDoor = true;
   });
 
-  player.collides('key', (key) => {
+  player.collides('key', (key: GameObj) => {
     K.play('coin');
     K.destroy(key);
     // hasKey = true;
   });
 
-  player.collides('wings', (wings) => {
+  player.collides('wings', (wings: GameObj) => {
     K.play('coin');
     K.destroy(wings);
     hasWings(true);
@@ -71,9 +72,9 @@ const playerOne = () => {
     }
   });
 
-  player.action(() => {
-    player.resolve();
-  });
+  // player.action(() => {
+  //   player.resolve();
+  // });
 
   return player;
 };

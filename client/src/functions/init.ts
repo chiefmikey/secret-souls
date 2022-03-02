@@ -2,9 +2,7 @@ import kaboom from 'kaboom';
 
 const K = kaboom({
   canvas: document.querySelector('#game') as HTMLCanvasElement,
-  clearColor: [0, 0, 0, 1],
   crisp: true,
-  fullscreen: false,
   width: 211,
   height: 211,
   scale: 3,

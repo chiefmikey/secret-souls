@@ -27,27 +27,27 @@ const twoOne = () => {
     '=================',
   ];
 
-  let wings = [K.sprite('wings'), 'wings'];
+  let wings = () => [K.sprite('wings'), K.solid(), K.area(), 'wings'];
   if (canFly()) {
-    wings = [];
+    wings = () => [];
   }
 
   K.addLevel(level, {
     width: 11,
     height: 11,
     pos: K.vec2(12, 12),
-    '=': [K.sprite('steel'), K.solid()],
-    '-': [K.sprite('steel'), K.solid(), 'ground'],
-    '@': [K.sprite('guy'), K.body(), 'playerOne'],
-    '|': [K.sprite('door'), 'door2-1'],
-    '!': [
+    W: wings,
+    F: () => [K.sprite('door'), K.solid(), K.area(), 'finalDoor'],
+    '-': () => [K.sprite('steel'), K.solid(), K.area(), 'ground'],
+    '=': () => [K.sprite('steel'), K.solid(), K.area()],
+    '@': () => [K.sprite('guy'), K.pos(), K.body(), K.area(), 'playerOne'],
+    '|': () => [K.sprite('door'), K.area(), 'door2-1'],
+    '!': () => [
       K.sprite(characters.cloudyman.sprite),
       K.solid(),
       characters.cloudyman.sprite,
       { msg: characters.cloudyman.msg },
     ],
-    F: [K.sprite('door'), K.solid(), 'finalDoor'],
-    W: wings,
   });
 
   K.gravity(1234);

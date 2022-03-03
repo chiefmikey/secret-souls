@@ -5,7 +5,7 @@ import K from '../functions/init';
 
 const other = () => {
   const level = [
-    '=======F=======',
+    '=======f=======',
     '=             =',
     '=             =',
     '=     !       =',
@@ -23,18 +23,18 @@ const other = () => {
   ];
 
   K.addLevel(level, {
-    width: 11,
-    height: 11,
-    pos: K.vec2(20, 20),
-    '=': [K.sprite('steel'), K.solid()],
-    '@': [K.sprite('guy'), 'playerOne'],
     '!': [
       K.sprite(characters.cloudyman.sprite),
       K.solid(),
       characters.cloudyman.sprite,
       { msg: characters.cloudyman.msg },
     ],
-    F: [K.sprite('door'), K.solid(), 'finalDoor'],
+    '=': [K.sprite('steel'), K.solid()],
+    '@': [K.sprite('guy'), 'playerOne'],
+    f: [K.sprite('door'), K.solid(), 'finalDoor'],
+    height: 11,
+    pos: K.vec2(20, 20),
+    width: 11,
   });
   controls();
 };

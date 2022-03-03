@@ -1,15 +1,15 @@
 const characters = {
   a: {
-    sprite: 'ch1',
     msg: 'tell me more',
+    sprite: 'ch1',
   },
   b: {
-    sprite: 'ch2',
     msg: 'wow dude',
+    sprite: 'ch2',
   },
   cloudyman: {
-    sprite: 'cloudyman',
     msg: 'its a cloudy night...',
+    sprite: 'cloudyman',
   },
 };
 

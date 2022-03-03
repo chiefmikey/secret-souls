@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "lib": ["es2021", "DOM", "DOM.Iterable"],
+    "lib": ["esnext", "DOM", "DOM.Iterable"],
     "moduleResolution": "node",
     "module": "esnext",
-    "target": "es6",
+    "target": "es2017",
     "sourceMap": true,
     "allowJs": true,
     "baseUrl": ".",

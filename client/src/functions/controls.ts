@@ -30,10 +30,10 @@ export const controls = (input?: string[]) => {
   const player = playerOne();
 
   allDirections = {
-    left: K.vec2(-1, 0),
-    up: K.vec2(0, -1),
-    right: K.vec2(1, 0),
     down: K.vec2(0, 1),
+    left: K.vec2(-1, 0),
+    right: K.vec2(1, 0),
+    up: K.vec2(0, -1),
   };
 
   load = () => {
@@ -51,7 +51,7 @@ export const controls = (input?: string[]) => {
     allDirections.space = K.vec2(0, -1);
     delete allDirections.up;
     delete allDirections.down;
-    K.keyPress('space', () => {
+    K.onKeyPress('space', () => {
       if ((isGrounded() && !canFly()) || canFly()) {
         player.jump(222);
         onGround(false);
@@ -62,8 +62,9 @@ export const controls = (input?: string[]) => {
   const directionKeys = Object.keys(allDirections);
 
   for (const key of directionKeys) {
-    K.keyPress(key as Key, ifTalking);
-    K.keyDown(key as Key, () => {
+    K.onKeyPress(key as Key, ifTalking);
+    K.onKeyDown(key as Key, () => {
+      console.log(key);
       player.move(
         allDirections[key as keyof typeof allDirections]?.scale(SPEED),
       );
@@ -113,10 +114,10 @@ const playerMove = (event: MouseEvent | TouchEvent) => {
 
 export const loadIn = (inputDirection: string) => {
   allDirections = {
-    left: K.vec2(-1, 0),
-    up: K.vec2(0, -1),
-    right: K.vec2(1, 0),
     down: K.vec2(0, 1),
+    left: K.vec2(-1, 0),
+    right: K.vec2(1, 0),
+    up: K.vec2(0, -1),
   };
   direction = inputDirection;
   // dirs[dir] = dirsBackup[dir];
@@ -127,12 +128,14 @@ const blackScreen: HTMLElement | null = document.querySelector('#blackScreen');
 const title: HTMLElement | null = document.querySelector('#title');
 
 const touchStart = () => {
-  if (!sound && getComputedStyle(title).opacity === '1') {
-    console.log('ive been touched');
+  const controlsElement: HTMLElement | null =
+    document.querySelector('#controls');
+  if (!sound && title && getComputedStyle(title).opacity === '1') {
     K.play('coin');
     sound = true;
-    (document.querySelector('#controls') as HTMLElement).style.pointerEvents =
-      'all';
+    if (controlsElement) {
+      controlsElement.style.pointerEvents = 'all';
+    }
     if (blackScreen && title) {
       blackScreen.style.animation = 'fadeOut .4s linear 0s forwards';
       title.style.animation = 'fadeOut .2s linear 0s forwards';

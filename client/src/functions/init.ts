@@ -12,10 +12,6 @@ const K = kaboom({
   width: 211,
 });
 
-K.onKeyPress(() => {
-  console.log('key');
-});
-
 // await K.loadRoot('/public/');
 await K.loadSprite('ch1', 'public/assets/sprites/ch1.png');
 await K.loadSprite('ch2', 'public/assets/sprites/ch2.png');

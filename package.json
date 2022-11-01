@@ -31,7 +31,7 @@
     "@types/koa-static": "^4.0.2",
     "@types/node": "^18.11.8",
     "@types/webpack": "^5.28.0",
-    "babel-loader": "^9.0.0",
+    "babel-loader": "^9.0.1",
     "css-loader": "^6.7.1",
     "eslint": "^8.26.0",
     "nodemon": "^2.0.20",

@@ -20,7 +20,7 @@
     "koa-static": "^5.0.0",
     "path": "^0.12.7",
     "source-map-js": "^1.0.2",
-    "the-new-css-reset": "^1.8.2"
+    "the-new-css-reset": "^1.8.4"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",

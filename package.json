@@ -19,7 +19,7 @@
     "koa-bodyparser": "^4.3.0",
     "koa-static": "^5.0.0",
     "path": "^0.12.7",
-    "source-map-js": "^1.0.2",
+    "source-map-js": "^1.2.1",
     "the-new-css-reset": "^1.8.2"
   },
   "devDependencies": {

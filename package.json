@@ -1,6 +1,7 @@
 {
   "name": "secret-souls",
   "version": "0.0.1",
+  "type": "module",
   "description": "chief mikey x secret souls",
   "main": "app.js",
   "scripts": {
@@ -32,7 +33,7 @@
     "@types/webpack": "^5.28.0",
     "babel-loader": "^9.1.0",
     "css-loader": "^6.7.3",
-    "mikey-pro": "^6.2.1",
+    "mikey-pro": "^10.1.0",
     "nodemon": "^2.0.20",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.4.2",
@@ -56,11 +57,8 @@
     "secret-souls"
   ],
   "author": "Mikl Wolfe <wolfe@mikl.io> (https://mikl.io)",
-  "prettier": "@mikey-pro/prettier-config",
-  "eslintConfig": {
-    "extends": "@mikey-pro/eslint-config"
-  },
+  "prettier": "mikey-pro/prettier",
   "stylelint": {
-    "extends": "@mikey-pro/stylelint-config"
+    "extends": "mikey-pro/stylelint"
   }
 }

@@ -16,7 +16,7 @@
     "@koa/router": "^15.4.0",
     "airbnb-browser-shims": "^3.3.0",
     "kaboom": "2000.2.10",
-    "koa": "^3.1.2",
+    "koa": "^3.2.0",
     "koa-bodyparser": "^4.3.0",
     "koa-static": "^5.0.0",
     "path": "^0.12.7",

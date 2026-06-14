@@ -9,7 +9,7 @@
 - **Language:** TypeScript (ESM, `"type": "module"`)
 - **Game engine:** Kaboom.js 2000.2.10
 - **Server:** Koa with koa-router, koa-bodyparser, koa-cors, koa-static (port 3005)
-- **Build:** Webpack 5 with Babel + ts-loader
+- **Build:** Webpack 5 with babel-loader (`@babel/preset-typescript`). Types are stripped, NOT type-checked — `tsc` is not part of the build. (`ts-loader`/`ts-node` are installed but only used by `start:dev`/`start:prod`.)
 - **Styling:** CSS (the-new-css-reset)
 - **Container:** Docker (Alpine Linux base)
 - **Linting:** mikey-pro (ESLint/Prettier/Stylelint)

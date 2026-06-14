@@ -1,22 +1,22 @@
 import path from 'node:path';
 
-import { Configuration } from 'webpack';
+import type { Configuration } from 'webpack';
 
 const SRC_DIR = path.join(path.resolve(), '/client/src');
 const DIST_DIR = path.join(path.resolve(), '/docs/public/dist');
 
 const config: Configuration = {
-  mode: 'development',
+  devtool: 'inline-source-map',
   entry: `${SRC_DIR}/index.ts`,
-  output: {
-    filename: 'bundle.js',
-    path: DIST_DIR,
+  experiments: {
+    topLevelAwait: true,
   },
+  mode: 'development',
   module: {
     rules: [
       {
-        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
+        test: /\.(js|jsx|ts|tsx)$/,
         use: [
           {
             loader: 'babel-loader',
@@ -51,13 +51,13 @@ const config: Configuration = {
       },
     ],
   },
+  output: {
+    filename: 'bundle.js',
+    path: DIST_DIR,
+  },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.mjs', '.cjs'],
   },
-  experiments: {
-    topLevelAwait: true,
-  },
-  devtool: 'inline-source-map',
 };
 
 export default config;
